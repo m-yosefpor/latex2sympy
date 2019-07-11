@@ -3,6 +3,12 @@
 latex2sympy parses LaTeX math expressions and converts it into the
 equivalent SymPy form.
 
+## Requirements
+$ pip install antlr-python3-runtime  #for python3
+
+or 
+
+$ pip install antlr-python2-runtime #for python2
 ## Installation
 
 [ANTLR](http://www.antlr.org/) is used to generate the parser:
@@ -13,12 +19,12 @@ $ antlr4 PS.g4 -o gen
 
 ## Usage
 
-In Python 2.7:
+In Python 2.7 or 3.7:
 
 ```python
 from process_latex import process_sympy
 
-process_sympy("\\frac{d}{dx} x^{2}")
+process_sympy(r"\frac{d}{dx} x^{2}")
 # => "diff(x**(2), x)"
 ```
 
